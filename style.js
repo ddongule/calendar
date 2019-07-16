@@ -270,7 +270,6 @@ $(".fa-angle-right").click(function () {
     });
 });
 
-
 $('.agenda').click(function() {
     if ($(this).text() != "") {
         alert($(this).text());
