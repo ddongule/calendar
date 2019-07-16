@@ -1,0 +1,125 @@
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Lato', "Noto Sans KR", sans-serif;
+  background-color: #FAFAFB;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  perspective: 1000px;
+}
+
+.main {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 30%;
+    display: contents;
+    transform: translate(-50%, -50%);
+    transition: all 0.195s ease;
+    transform-style: preserve-3d;
+}
+
+.main.is-rotated-left {
+    transform: translate(-50%, -50%) rotateY(-4deg);
+}
+.main.is-rotated-right {
+    transform: translate(-50%, -50%) rotateY(4deg);
+}
+
+.main .sideb,
+.main .header {
+    padding: 2em 0 1em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 35px;
+}
+.main .header i {
+    padding: 0 5px;
+    cursor: pointer;
+}
+.main .header span {
+    display: inline-block;
+    margin: 0 3px;
+    font-weight: 700;
+}
+
+.main .sideb .showDate {
+    color: white;
+    text-align: right;
+    width: 100%;
+}
+.main .sideb .showDate i {
+    cursor: pointer;
+    background: #ff6813;
+    border-radius: 4px;
+    padding: 8px 12px;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+.main .sideb .showDate i.is-active {
+    transform: scale(-1);
+}
+
+.main .sideb table {
+    text-align: center;
+    width: 90%;
+    margin: 1em auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.main .sideb table tbody:before {
+    content: "-";
+    display: block;
+    line-height: 0.75em;
+    color: transparent;
+}
+.main .sideb table th {
+    color: #ff6813;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: "Lato";
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.main .sideb table .eachday {
+    padding: 0 5px;
+    color: #303633;
+    font-size: 0.75em;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.main .sideb table .agenda {
+    padding: 0 5px 10em 5px;
+    color: #000000;
+    font-size: 0.75em;
+    transition: all 0.3s;
+    position: relative;
+}
+.main .sideb table td::before {
+    position: absolute;
+    content: "";
+    display: none;
+    width: 25%;
+    height: 2px;
+    left: 50%;
+    top: 160%;
+    transform: translate(-50%, -8px);
+    background-color: #ff6813;
+}
+.main .sideb table td.currentDay::before {
+    display: block;
+}
+.main .sideb table td.selectable {
+    color: #303633;
+}
+.main .sideb table td.selectable:hover {
+    background-color: #ff6813;
+    color: white;
+}
