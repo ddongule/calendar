@@ -206,9 +206,12 @@ function insert(){
                     $(".fa-angle-left, .fa-angle-right").click(function() {
                         var pdays = document.getElementsByClassName('days');
                         var pmonth = document.getElementsByClassName("month");
+                        var pyear = document.getElementsByClassName('year');
+
                         var pmonthname = pmonth[0].innerText;
+                        var pyearname = pyear[0].innerText;
                         
-                        if (pmonthname == val.jsdate.getMonth()+1+"월" && v.innerText == val.jsdate.getDate()) {
+                        if (pyearname == val.jsdate.getFullYear() && pmonthname == val.jsdate.getMonth()+1+"월" && v.innerText == val.jsdate.getDate()) {
                             var pgendas = document.getElementsByClassName('agendas');
                             $.each(pdays, function(i, day){
                                 $.each(pgendas, function(i, genda){
